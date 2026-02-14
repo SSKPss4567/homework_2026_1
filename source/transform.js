@@ -1,6 +1,5 @@
 /**
  * Функция, преобразующая поля объекта с помощью переданной функции.
- *
  * @param {Object} obj - исходный объект или массив
  * @param {Function} transformFn - функция преобразования значений
  *
@@ -14,9 +13,7 @@
  *
  * @returns {Object}
  */
-
-
-const transform= (obj, transformFn) => {
+const transform = (obj, transformFn) => {
     if (Array.isArray(obj)) {
         return obj.map(item => (item && typeof item === 'object') ? transform(item, transformFn) : transformFn(item));
     }
