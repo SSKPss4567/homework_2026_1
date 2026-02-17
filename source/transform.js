@@ -17,8 +17,8 @@
  */
 const transform = (obj, transformFn) => {
 
-    if ((typeof obj !== 'object' && !Array.isArray(obj)) || obj === null || typeof transformFn !== 'function') {
-        return console.error("Входные данные должны быть объектом или массивом, а transformFn должен быть функцией");
+    if (typeof obj !== 'object' || obj === null || typeof transformFn !== 'function') {
+       throw new Error("Входные данные должны быть объектом или массивом, а transformFn должен быть функцией");
     }
 
     if (Array.isArray(obj)) {
